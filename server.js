@@ -13,11 +13,13 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 var tablesarray = ["test"];
+var reservationarray = ["testtwo"]
 
 var table = [{
   routeName: "table",
   name: "table",
-  display: tablesarray
+  display: tablesarray,
+  display2: reservationarray
 }];
 
 app.get("/", function(req, res) {
