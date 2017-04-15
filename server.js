@@ -44,28 +44,28 @@ var table = [{
 //   return res.json(table);
 // });
 
-app.get("/", function(req, res) 
+app.get("/home.html?", function(req, res) 
 {
   res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/tables", function(req, res) 
+app.get("/tables.html", function(req, res) 
 {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/reservations", function(req, res) 
+app.get("/reserve.html", function(req, res) 
 {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-app.get("/api/reservations", function(req, res)
+app.get("/api/reserve.html", function(req, res)
 {
 	return res.json(reservations);
 });
 
 
-app.post("/reservations/new", function(res, req)
+app.post("/reserve.html/new", function(req, res)
 {
 	var newRes = req.body;
 	newRes.routeName = newRes.name.replace(/\s+/g, "").toLowerCase();
@@ -76,6 +76,7 @@ app.post("/reservations/new", function(res, req)
 
 	res.json(newRes);
 });
+
 
 
 

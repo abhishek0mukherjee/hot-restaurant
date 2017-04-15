@@ -1,3 +1,11 @@
+// reservation obj creator
+function Reservation(name,phone,email,ID) {
+	this.name = name;
+	this.phone = phone;
+	this.email = email;
+	this.ID = ID;
+};
+
 // Reservation Submit Button Listener
 $("#submitButton").on("click", function(event){
 	event.preventDefault();
@@ -10,7 +18,7 @@ $("#submitButton").on("click", function(event){
 	console.log(res);
 
 	// post request
-	$.post("/reservations/new", res)
+	$.post("/reserve.html/new", res)
     .done(function(data) {
     	console.log(data);
     	alert("Adding reservation...");
@@ -18,10 +26,5 @@ $("#submitButton").on("click", function(event){
 });
 
 
-// reservation obj creator
-function Reservation(name,phone,email,ID) {
-	this.name = name;
-	this.phone = phone;
-	this.email = email;
-	this.ID = ID;
-};
+
+
